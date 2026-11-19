@@ -1,3 +1,4 @@
+
 #
 # SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
@@ -5,7 +6,7 @@
 
 DEVICE_PATH := device/motorola/mumba
 
-# Inherit from motorola sm6450-common
+# Inherit from Motorola SM6450 common
 include device/motorola/sm6450-common/BoardConfigCommon.mk
 
 # Bootloader
@@ -30,7 +31,7 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 BOARD_AVB_ROLLBACK_INDEX := 6
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(BOARD_AVB_ROLLBACK_INDEX)
 
-# SEPolicy
+# SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Vendor
