@@ -1,24 +1,28 @@
+
 #
 # SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from those products. Most specific first.
+# Inherit from platform products
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mumba device
+# Inherit from Mumba device
 $(call inherit-product, device/motorola/mumba/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# AOSPA maintainer
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.pa.maintainer=xrayuncle
 
-PRODUCT_NAME := lineage_mumba
+# Product information
+PRODUCT_NAME := aospa_mumba
 PRODUCT_DEVICE := mumba
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := motorola moto g57 power
 
+# Build properties
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="mumba_g-user 16 W1WAAS36.48-12-23-5 88187-83dd13 release-keys" \
     BuildFingerprint=motorola/mumba_g/mumba:16/W1WAAS36.48-12-23-5/88187-83dd13:user/release-keys \
@@ -28,23 +32,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     SystemName=mumba_g
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
-
-# Maintainer name (underscores in values convert to spaces in UI)
-DESCARTES_MAINTAINER := lostsignal-502
-
-# Processor / SoC model
-DESCARTES_PROCESSOR := Snapdragon_6s_Gen_4
-
-# Battery capacity and technology
-DESCARTES_BATTERY := 7000_mAh
-
-# Display specification
-DESCARTES_DISPLAY := 6.72_IPS_LCD_120Hz
-
-# Camera sensor resolutions (comma-separated for multi-lens setups)
-DESCARTES_CAMERA_REAR_INFO := 50,8
-DESCARTES_CAMERA_FRONT_INFO := 8
-
-# Build release type (OFFICIAL, UNOFFICIAL, NIGHTLY)
-DESCARTES_BUILD_TYPE := OFFICIAL
-
