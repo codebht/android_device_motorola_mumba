@@ -1,4 +1,3 @@
-
 #
 # SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
@@ -11,16 +10,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from Mumba device
 $(call inherit-product, device/motorola/mumba/device.mk)
 
-# AOSPA maintainer
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.pa.maintainer=xrayuncle
+# Inherit some common Evolution X stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Evolution X flags
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_ENABLE_BLUR := true
+EVO_MAINTAINER := codebht, xrayuncle
 
 # Product information
-PRODUCT_NAME := aospa_mumba
+PRODUCT_NAME := evolution_mumba
 PRODUCT_DEVICE := mumba
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := motorola moto g57 power
+PRODUCT_MODEL := moto g57 power
 
 # Build properties
 PRODUCT_BUILD_PROP_OVERRIDES += \
