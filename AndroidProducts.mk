@@ -3,4 +3,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aospa_mumba.mk
+    $(LOCAL_DIR)/evolution_mumba.mk
+
+COMMON_LUNCH_CHOICES := \
+    evolution_mumba-bp4a-userdebug \
+    evolution_mumba-bp4a-user \
+    evolution_mumba-bp4a-eng
